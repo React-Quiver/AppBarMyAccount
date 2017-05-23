@@ -1,0 +1,9 @@
+<div style={{ background: '#2196f3' }}>
+  <AppBarMyAccount
+    user={{
+      firstName: 'Olivier',
+      lastName: 'Kastel',
+      email: 'olivier.kastel@gmail.com'
+    }}
+  />
+</div>
