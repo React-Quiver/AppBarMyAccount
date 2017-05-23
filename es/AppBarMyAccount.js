@@ -77,7 +77,7 @@ var AppBarMyAccount = function (_Component) {
 
       return React.createElement(
         MuiThemeProvider,
-        null,
+        { muiTheme: this.context.muiTheme },
         React.createElement(
           'div',
           {
@@ -178,5 +178,8 @@ var AppBarMyAccount = function (_Component) {
 
 AppBarMyAccount.propTypes = {
   user: PropTypes.object
+};
+AppBarMyAccount.contextTypes = {
+  muiTheme: PropTypes.object.isRequired
 };
 export default AppBarMyAccount;

@@ -14,6 +14,10 @@ export default class AppBarMyAccount extends Component {
     user: PropTypes.object,
   };
 
+  static contextTypes = {
+    muiTheme: PropTypes.object.isRequired,
+  };
+
   state = {
     isOpen: false,
   }
@@ -48,7 +52,7 @@ export default class AppBarMyAccount extends Component {
     }
 
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider muiTheme={this.context.muiTheme}>
         <div
           tabIndex={2}
           onBlur={::this.closeMyAccount}
