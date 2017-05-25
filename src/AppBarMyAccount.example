@@ -1,9 +1,16 @@
-<div style={{ background: '#2196f3' }}>
-  <AppBarMyAccount
-    user={{
-      firstName: 'Olivier',
-      lastName: 'Kastel',
-      email: 'olivier.kastel@gmail.com'
-    }}
+<MuiThemeProvider>
+  <AppBar
+    iconClassNameRight="muidocs-icon-navigation-expand-more"
+    iconElementRight={
+      <AppBarMyAccount
+        user={{
+          firstName: 'Olivier',
+          lastName: 'Kastel',
+          email: 'olivier.kastel@gmail.com'
+        }}
+        settingsUrl = {'/'}
+        signOutUrl = {'/'}
+      />
+    }
   />
-</div>
+</MuiThemeProvider>

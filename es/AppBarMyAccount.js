@@ -82,7 +82,8 @@ var AppBarMyAccount = function (_Component) {
           'div',
           {
             tabIndex: 2,
-            onBlur: this.closeMyAccount.bind(this)
+            onBlur: this.closeMyAccount.bind(this),
+            style: { margin: 10 }
           },
           React.createElement(
             'div',
@@ -145,10 +146,10 @@ var AppBarMyAccount = function (_Component) {
                     label: 'My Account',
                     backgroundColor: '#2196f3',
                     hoverColor: '#1976d2',
-                    style: { color: 'white' }
-                    // onMouseDown = {() => {
-                    //   browserHistory.push('/settings');
-                    // }}
+                    style: { color: 'white' },
+                    onMouseDown: function onMouseDown() {
+                      window.location.replace(_this2.props.settingsUrl);
+                    }
                   })
                 )
               ),
@@ -160,10 +161,10 @@ var AppBarMyAccount = function (_Component) {
                 React.createElement(FlatButton, {
                   label: 'Sign Out',
                   backgroundColor: 'white',
-                  hoverColor: '#e0e0e0'
-                  // onMouseDown = {() => {
-                  //   browserHistory.push('/signout');
-                  // }}
+                  hoverColor: '#e0e0e0',
+                  onMouseDown: function onMouseDown() {
+                    window.location.replace(_this2.props.signOutUrl);
+                  }
                 })
               )
             ) : null
@@ -177,7 +178,9 @@ var AppBarMyAccount = function (_Component) {
 }(Component);
 
 AppBarMyAccount.propTypes = {
-  user: PropTypes.object
+  user: PropTypes.object,
+  settingsUrl: PropTypes.string,
+  signOutUrl: PropTypes.string
 };
 AppBarMyAccount.contextTypes = {
   muiTheme: PropTypes.object.isRequired

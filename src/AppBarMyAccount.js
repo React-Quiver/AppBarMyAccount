@@ -12,6 +12,8 @@ import styles from './styles';
 export default class AppBarMyAccount extends Component {
   static propTypes = {
     user: PropTypes.object,
+    settingsUrl: PropTypes.string,
+    signOutUrl: PropTypes.string,
   };
 
   static contextTypes = {
@@ -56,6 +58,7 @@ export default class AppBarMyAccount extends Component {
         <div
           tabIndex={2}
           onBlur={::this.closeMyAccount}
+          style={{ margin: 10 }}
         >
           <div>
             <Avatar
@@ -94,9 +97,9 @@ export default class AppBarMyAccount extends Component {
                     backgroundColor={'#2196f3'}
                     hoverColor={'#1976d2'}
                     style={{ color: 'white' }}
-                    // onMouseDown = {() => {
-                    //   browserHistory.push('/settings');
-                    // }}
+                    onMouseDown = {() => {
+                      window.location.replace(this.props.settingsUrl);
+                    }}
                   />
                 </div>
               </div>
@@ -107,9 +110,9 @@ export default class AppBarMyAccount extends Component {
                   label="Sign Out"
                   backgroundColor={'white'}
                   hoverColor={'#e0e0e0'}
-                  // onMouseDown = {() => {
-                  //   browserHistory.push('/signout');
-                  // }}
+                  onMouseDown = {() => {
+                    window.location.replace(this.props.signOutUrl);
+                  }}
                 />
                 </div>
               </Paper>
