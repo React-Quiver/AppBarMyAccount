@@ -69,7 +69,14 @@ var AppBarMyAccount = function (_Component) {
 
       var isOpen = this.state.isOpen;
       var user = this.props.user;
+      var muiTheme = this.context.muiTheme;
 
+
+      var palette = undefined;
+
+      if (muiTheme) {
+        palette = muiTheme.rawTheme.palette;
+      }
 
       if (this.isEmpty(user)) {
         return React.createElement('div', null);
@@ -144,8 +151,8 @@ var AppBarMyAccount = function (_Component) {
                   React.createElement('br', null),
                   React.createElement(FlatButton, {
                     label: 'My Account',
-                    backgroundColor: '#2196f3',
-                    hoverColor: '#1976d2',
+                    backgroundColor: palette.accent1Color || '#2196f3',
+                    hoverColor: palette.accent3Color || '#1976d2',
                     style: { color: 'white' },
                     onMouseDown: function onMouseDown() {
                       window.location.replace(_this2.props.settingsUrl);

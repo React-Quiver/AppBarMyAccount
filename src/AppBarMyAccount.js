@@ -48,6 +48,13 @@ export default class AppBarMyAccount extends Component {
   render() {
     const { isOpen } = this.state;
     const { user } = this.props;
+    const { muiTheme } = this.context;
+
+    let palette = undefined;
+
+    if (muiTheme) {
+      palette = muiTheme.rawTheme.palette;
+    }
 
     if (this.isEmpty(user)) {
       return (<div></div>);
@@ -94,8 +101,8 @@ export default class AppBarMyAccount extends Component {
                   <span style={styles.email}>{user.email}</span><br /><br />
                   <FlatButton
                     label="My Account"
-                    backgroundColor={'#2196f3'}
-                    hoverColor={'#1976d2'}
+                    backgroundColor={palette.accent1Color || '#2196f3'}
+                    hoverColor={palette.accent3Color || '#1976d2'}
                     style={{ color: 'white' }}
                     onMouseDown = {() => {
                       window.location.replace(this.props.settingsUrl);
