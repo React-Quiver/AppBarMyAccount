@@ -105,7 +105,7 @@ export default class AppBarMyAccount extends Component {
                     hoverColor={palette.accent3Color || '#1976d2'}
                     style={{ color: 'white' }}
                     onMouseDown = {() => {
-                      window.location.replace(`https://${this.props.settingsUrl}`);
+                      window.location.replace(this.props.settingsUrl);
                     }}
                   />
                 </div>
@@ -118,7 +118,7 @@ export default class AppBarMyAccount extends Component {
                   backgroundColor={'white'}
                   hoverColor={'#e0e0e0'}
                   onMouseDown = {() => {
-                    window.location.replace(`https://${this.props.signOutUrl}`);
+                    window.location.replace(this.props.signOutUrl);
                   }}
                 />
                 </div>

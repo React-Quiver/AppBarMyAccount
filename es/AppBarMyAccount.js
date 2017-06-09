@@ -155,7 +155,7 @@ var AppBarMyAccount = function (_Component) {
                     hoverColor: palette.accent3Color || '#1976d2',
                     style: { color: 'white' },
                     onMouseDown: function onMouseDown() {
-                      window.location.replace('https://' + _this2.props.settingsUrl);
+                      window.location.replace(_this2.props.settingsUrl);
                     }
                   })
                 )
@@ -170,7 +170,7 @@ var AppBarMyAccount = function (_Component) {
                   backgroundColor: 'white',
                   hoverColor: '#e0e0e0',
                   onMouseDown: function onMouseDown() {
-                    window.location.replace('https://' + _this2.props.signOutUrl);
+                    window.location.replace(_this2.props.signOutUrl);
                   }
                 })
               )
