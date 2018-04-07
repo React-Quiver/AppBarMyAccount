@@ -1,6 +1,6 @@
 {
   "name": "quiver-app-bar-my-account",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "<%= componentName %> - React component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
