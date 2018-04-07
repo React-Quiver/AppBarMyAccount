@@ -9,6 +9,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 import React, { Component, PropTypes } from 'react';
+import { browserHistory } from 'react-router';
 
 // material-ui
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -155,7 +156,7 @@ var AppBarMyAccount = function (_Component) {
                     hoverColor: palette.accent3Color || '#1976d2',
                     style: { color: 'white' },
                     onMouseDown: function onMouseDown() {
-                      window.location.replace(_this2.props.settingsUrl);
+                      browserHistory.push(_this2.props.settingsUrl);
                     }
                   })
                 )
@@ -170,7 +171,7 @@ var AppBarMyAccount = function (_Component) {
                   backgroundColor: 'white',
                   hoverColor: '#e0e0e0',
                   onMouseDown: function onMouseDown() {
-                    window.location.replace(_this2.props.signOutUrl);
+                    browserHistory.push(_this2.props.signOutUrl);
                   }
                 })
               )

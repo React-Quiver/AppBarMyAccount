@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { browserHistory } from 'react-router';
 
 // material-ui
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -105,8 +106,9 @@ export default class AppBarMyAccount extends Component {
                     hoverColor={palette.accent3Color || '#1976d2'}
                     style={{ color: 'white' }}
                     onMouseDown = {() => {
-                      window.location.replace(this.props.settingsUrl);
-                    }}
+                      browserHistory.push(this.props.settingsUrl);
+                    }
+                  }
                   />
                 </div>
               </div>
@@ -118,8 +120,9 @@ export default class AppBarMyAccount extends Component {
                   backgroundColor={'white'}
                   hoverColor={'#e0e0e0'}
                   onMouseDown = {() => {
-                    window.location.replace(this.props.signOutUrl);
-                  }}
+                    browserHistory.push(this.props.signOutUrl);
+                  }
+                }
                 />
                 </div>
               </Paper>
